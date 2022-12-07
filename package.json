@@ -38,7 +38,7 @@
     "build:copy": "node scripts/build_copy.js",
     "dev": "yarn run storybook",
     "lint": "eslint . --ext js,ts,tsx",
-    "release": "np --contents dist",
+    "release": "np --contents dist --no-tests",
     "version": "yarn build",
     "pretty": "prettier '**/*.{js,ts,tsx,md,json,yml,html}' --write",
     "storybook": "start-storybook -p 9000",
