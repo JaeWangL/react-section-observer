@@ -35,6 +35,7 @@
     "prebuild": "rm -rf dist lib",
     "build": "run-s build:*",
     "build:bundle": "microbundle --name ReactSectionObserver --jsx React.createElement -f cjs,umd,es,modern --no-compress",
+    "build:copy": "node scripts/build_copy.js",
     "dev": "yarn run storybook",
     "lint": "eslint . --ext js,ts,tsx",
     "release": "np --contents dist",
@@ -72,7 +73,8 @@
       "prettier --write"
     ],
     "src/**/*.{ts,tsx}": [
-      "eslint"
+      "eslint",
+      "vitest related --run"
     ]
   },
   "size-limit": [
