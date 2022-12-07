@@ -7,6 +7,13 @@
   "module": "./dist/react-section-observer.esm.js",
   "unpkg": "./dist/react-section-observer.umd.js",
   "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/react-section-observer.js",
+      "default": "./dist/react-section-observer.modern.mjs"
+    }
+  },
   "author": "JaeWangL <jnso5072@outlook.kr>",
   "sideEffects": false,
   "repository": {
@@ -27,10 +34,7 @@
   "scripts": {
     "prebuild": "rm -rf dist lib",
     "build": "run-s build:*",
-    "build:bundle": "microbundle --name ReactIntersectionObserver --jsx React.createElement -f cjs,umd,es,modern --no-compress",
-    "build:utils": "tsc -p tsconfig.test.json",
-    "build:copy": "node scripts/build-copy.js",
-    "postbuild": "size-limit",
+    "build:bundle": "microbundle --name ReactSectionObserver --jsx React.createElement -f cjs,umd,es,modern --no-compress",
     "dev": "yarn run storybook",
     "lint": "eslint . --ext js,ts,tsx",
     "release": "np --contents dist",
@@ -68,10 +72,17 @@
       "prettier --write"
     ],
     "src/**/*.{ts,tsx}": [
-      "eslint",
-      "vitest related --run"
+      "eslint"
     ]
   },
+  "size-limit": [
+    {
+      "path": "dist/react-section-observer.esm.js",
+      "name": "useInSection",
+      "import": "{ useInSection }",
+      "limit": "1.3 kB"
+    }
+  ],
   "peerDependencies": {
     "react": "^17.0.0 || ^18.0.0"
   },
