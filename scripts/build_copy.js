@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const pck = require('../package.json');
+const pck = require('../package');
 
 const rootDir = path.resolve(__dirname, '../');
 const distDir = path.resolve(__dirname, '../dist');
@@ -20,8 +20,6 @@ const packageFieldsToRemove = [
   'simple-git-hooks',
   'prettier',
   'jest',
-  'eslintConfig',
-  'eslintIgnore',
   'np',
 ];
 

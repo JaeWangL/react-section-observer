@@ -2,7 +2,7 @@
   "name": "react-section-observer",
   "version": "0.0.1",
   "description": "React implementation of the Section Observer API to tell you when you enter or leave the section",
-  "source": "./src/index.tsx",
+  "source": "./src/index.ts",
   "main": "./dist/react-section-observer.js",
   "module": "./dist/react-section-observer.esm.js",
   "unpkg": "./dist/react-section-observer.umd.js",
